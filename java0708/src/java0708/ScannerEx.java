@@ -3,7 +3,7 @@ package java0708;
 import java.util.Scanner;
 
 public class ScannerEx {
-	public static void main(String[]args) throws Exception{
+	public static void main(String[]args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
 		String inputData;
 		
