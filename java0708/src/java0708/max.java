@@ -25,7 +25,7 @@ public class max {
 		} else if(num1 <num2) {
 			System.out.printf("%d이 더 큽니다", num2);
 		} else {
-			System.out.printf("같은 숫자입니다");
+			System.out.printf("%d 와 %d 는 같은 숫자입니다", num1, num2);
 		}
 	}
 }
