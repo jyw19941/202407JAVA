@@ -15,10 +15,7 @@ public class Member {
 		this.number = number;
 		this.phone = phone;
 	}
-	public Member(int balance) {
-		super();
-		this.balance = balance;
-	}
+
 //	public Member(String name, String number, String phone) {
 //		
 //	}
