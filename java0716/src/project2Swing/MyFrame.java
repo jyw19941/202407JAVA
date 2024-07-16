@@ -1,11 +1,22 @@
-package java0716;
+package project2Swing;
 
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+
 
 public class MyFrame extends JFrame {
 	JLabel lb1 = new JLabel("아이디");
@@ -20,9 +31,37 @@ public class MyFrame extends JFrame {
 	JButton jb4 = new JButton("출금");
 	JButton jb5 = new JButton("잔고");
 	JTextArea ta = new JTextArea();
+	
+	
+	List<Member> list = null;
+	Member member;
+	
 	public MyFrame() {
 		Container con = this.getContentPane();
 		con.setLayout(null);
+	
+
+		try (FileInputStream fis = new FileInputStream("c:\\temp\\members.dat");
+	             ObjectInputStream ois = new ObjectInputStream(fis)) {
+			Member[] list2 = (Member[]) ois.readObject();
+			list = new ArrayList<>(Arrays.asList(list2));   // 배열을 ArrayList로
+			System.out.println("파일에서 객체를 가져왔습니다.");
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		for (Member member : list) {
+			System.out.println(member);
+		}
+		System.out.println("총회원수:"+list.size());
+		
+		Member member = null; // 로그인 된 현재 사용자
+		
+		
+		
+		
+		
+		
+		
 		
 		con.add(lb1);
 		lb1.setLocation(20, 50);
@@ -79,6 +118,36 @@ public class MyFrame extends JFrame {
 		this.setLocation(700, 300);
 		this.setSize(900, 500);
 		this.setVisible(true);
+	}
+
+	
+	
+	
+	
+	class MyListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			// 로그인 처리
+			System.out.println("로그인 처리");
+			
+			System.out.print("아이디:");  //출력문
+			String name = jt1.getText(); // name 변수의 값 입력
+			System.out.print("패스워드:");
+			String strPassword = jt2.getText();//패스워드입력
+			
+			for (Member member2 : list) {
+				if (member2.getName().equals(name) && member2.getNumber().equals(strPassword)) {
+					member = member2;
+					System.out.println("로그인 성공!!");
+					break;
+				}
+			}
+			System.out.println(member);		
+				
+		}
+
 	}
 
 	public static void main(String[] args) {
