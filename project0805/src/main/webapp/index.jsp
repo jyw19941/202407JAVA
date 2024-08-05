@@ -15,10 +15,17 @@ List<BoardDTO> list = dao.getBoardList();
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+          	background-image: url(images/news4.jpg);
             margin: 0;
             padding: 0;
             text-align: center;
+        }
+        .header {
+            background-color:#3f3cec ;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
         }
         table {
             width: 680px;
@@ -30,7 +37,7 @@ List<BoardDTO> list = dao.getBoardList();
         }
         th, td {
             padding: 10px;
-            border: 3px solid #ddd;
+            border: 3px solid silver;
         }
         th {
             background-color: silver;
@@ -39,7 +46,7 @@ List<BoardDTO> list = dao.getBoardList();
         .title    { width: 230px; }
         .writer   { width: 100px; }
         .regtime  { width: 250px; }
-        .hit	{width:150px;}
+        .hit      { width: 150px; }
         a:link    { text-decoration: none; color: blue; }
         a:visited { text-decoration: none; color: gray; }
         a:hover   { text-decoration: none; color: red; }
@@ -63,6 +70,8 @@ List<BoardDTO> list = dao.getBoardList();
     </style>
 </head>
 <body>
+
+<div class="header">게시판</div>
 
 <table>
     <thead>
