@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +75,7 @@
             <button type="submit">회원 가입</button>
         </form>
         <div class="message">
-            <p><a href="main.jsp">메인 메뉴로 돌아가기</a></p>
+            <p><a href="Main.jsp">메인 메뉴로 돌아가기</a></p>
         </div>
     </div>
 </body>
